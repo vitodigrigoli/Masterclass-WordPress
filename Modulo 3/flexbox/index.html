@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Montserrat&display=swap" rel="stylesheet">
+</head>
+
+<style>
+
+	*{margin: 0; padding: 0; box-sizing: border-box;}
+
+	:root{
+		--color-1: #1C2F42;
+	}
+
+	body{ 
+
+		font-family: 'Montserrat', sans-serif;
+		background: var(--color-1);
+		color: white;
+	}
+
+	h1, h2, h3{
+		font-family: 'Avera Serif Libre', serif;
+	}
+
+	img{width: 100%; height: auto;}
+
+
+	
+	.panel{ 
+		border: 2px solid white;
+		width: 70%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-direction: row;
+	}
+
+	.panel--reverse{ flex-direction: row-reverse;}
+
+	.panel__img{ border: 1px solid red; width: 50%;}
+
+	.panel__text{ border: 1px solid red; width: 40%;}
+	.panel__text__subtitle{font-size: 0.7rem; text-transform: uppercase;}
+	.panel__text__title{font-size: 1.2rem;}
+
+
+
+
+</style>
+<body>
+
+
+	<div class="panel">
+
+		<div class="panel__text">
+			<h1 class="panel__text__subtitle">Lorem ipsum dolor sit amet consectetur</h1>
+			<h2 class="panel__text__title">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid, eum?</h2>
+		</div>
+
+		<div class="panel__img">
+			<img src="./img1.jpg" alt="">
+		</div>
+	</div>
+
+	<div class="panel panel--reverse">
+
+		<div class="panel__text">
+			<h1 class="panel__text__subtitle">Lorem ipsum dolor sit amet consectetur</h1>
+			<h2 class="panel__text__title">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid, eum?</h2>
+		</div>
+
+		<div class="panel__img">
+			<img src="./img1.jpg" alt="">
+		</div>
+	</div>
+	
+	
+
+
+</body>
+</html>
