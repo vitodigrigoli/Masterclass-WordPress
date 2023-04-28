@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+
+    <!-- Header -->
+    <header class="header">
+
+        <div class="container">
+
+            <div class="header__text">
+                <h1>Welcome to <span>VENOM STYLE</span></h1>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium ab doloribus neque sapiente cupiditate delectus rerum possimus eaque! Alias, tempore![150]</p>
+            </div>
+
+            <div class="header__media">
+
+                <div class="header__media__item">
+                    <img src="./assets/img/15.png" alt="">
+                </div>
+
+                <div class="header__media__item">
+                    <img src="./assets/img/12.png" alt="">
+                </div>
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- Hero -->
+    <section class="hero container">
+        <div class="hero__text">
+            <h2 class="text--1">Lorem ipsum dolor sit amet</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed, exercitationem praesentium? Reprehenderit dolores autem eum voluptatum nihil hic aliquid, officia nisi nam magni tenetur omnis!</p>
+        
+            <a href="" class="button">Click me! 🫶</a>
+        </div>
+    </section>
+
+
+    <!-- Cards -->
+    <section class="cards container">
+
+        <div class="card">
+
+            <div class="card__img">
+                <img src="./assets/img/1.png" alt="">
+            </div>
+
+            <div class="card__text">
+                <h3 class="text--2">Starter #1</h3>
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <div class="card__img">
+                <img src="./assets/img/3.png" alt="">
+            </div>
+
+            <div class="card__text">
+                <h3 class="text--2">Starter #2</h3>
+            </div>
+            
+        </div>
+
+        <div class="card">
+
+            <div class="card__img">
+                <img src="./assets/img/4.png" alt="">
+            </div>
+
+            <div class="card__text">
+                <h3 class="text--2">Starter #3</h3>
+            </div>
+            
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer container">
+
+        <div class="footer__info">
+
+            <div class="footer__info__item">
+                <h2 class="text--3">About</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo blanditiis fugit tempora temporibus hic. Sequi, distinctio eaque aliquid fuga provident?</p>
+            </div>
+
+            <div class="footer__info__item">
+                <h2 class="text--3">Social</h2>
+                <p><a href="">Facebook</a> - <a href="">Instagram</a></p>
+            </div>
+
+            <div class="footer__info__item">
+                <h2 class="text--3">Policy</h2>
+                <p><a href="">Privacy</a> - <a href="">Cookie</a></p>
+            </div>
+        </div>
+
+        <div class="footer__form">
+            <h2 class="text--3">Contattaci</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo blanditiis fugit tempora temporibus hic.</p>
+
+            <form action="" method="post" class="form" id="form">
+                <input type="text" placeholder="Il tuo nome" name="name">
+                <input type="email" placeholder="La tua email" name="email">
+                <textarea rows="10" placeholder="Scrivi il tuo messaggio qui..." name="message"></textarea>
+                <input type="text" class="hp d-none">
+                <span class="button">
+                    <input type="submit" value="Invia ora 🚀">
+                </span>
+
+            </form>
+        </div>
+
+    </footer>
+
+    <div class="popup">
+        <div class="popup__text container">
+           <p class="text--2">Stiamo inviando il tuo messaggio. Attendi...</p>
+           <div class="arc"></div>
+           <span class="button" onclick="togglePopup()">Chiudi 🙃</span>
+        </div>
+    </div>
+
+
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script src="./scripts.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,429 @@
+/*------------------------------
+General
+------------------------------*/
+
+*,
+*::before,
+*::after{ margin: 0; padding: 0; box-sizing: border-box;}
+
+:root{
+    --color-1: #15151F;
+    --color-2: #8282ff;
+    --color-3: #9c73d9;
+    --color-4: #d95081;
+    --color-5: #fc3279;
+}
+
+
+body{background-color: var(--color-1); color: white; font-family: 'Montserrat', sans-serif;}
+
+img{ width: 100%; height: auto;}
+
+h1, h2, h3, h4, h5, h6 { 
+    font-weight: 900;
+    background: -webkit-linear-gradient(45deg, var(--color-2), var(--color-5));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    width: fit-content;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-block-end: 2.5rem;
+}
+
+p{font-size: clamp(1rem, 1.5vw, 2rem); line-height: 2;}
+
+a{text-decoration: none; color: inherit;}
+
+
+/*------------------------------
+Helpers
+------------------------------*/
+
+.container{width: 86%;  margin: 0 auto;}
+
+.text--1{font-size: clamp(2.5rem, 4vw, 6rem);}
+.text--2{font-size: clamp(1.3rem, 2vw, 4rem);}
+
+/*------------------------------
+Button
+------------------------------*/
+.button{ 
+    margin-top: 5vh;
+    display: inline-block;
+    padding: 1rem 1.5rem;
+    font-size: 1.2rem;
+    position: relative;
+    border-radius: 10px;
+    background-color: var(--color-1);
+    transition: background-color 0.4s;
+}
+
+
+.button:hover{
+    background-color: transparent;
+}
+
+.button::before,
+.button::after{
+    content: "";
+    position: absolute;
+    top: 0; 
+    left: 0;
+    width: calc(100% + 6px);
+    height: calc(100% + 6px);
+    border-radius: 13px;
+    background: conic-gradient( from var(--gradient-angle), 
+    var(--color-2),
+     var(--color-3),
+      var(--color-4),
+       var(--color-5),
+        var(--color-4),
+         var(--color-3),
+          var(--color-2));
+    animation: rotation 5s linear infinite;
+    z-index: -1;
+    inset: -3px;
+}
+
+.button::after{
+    filter: blur(1rem);
+}
+
+
+@property --gradient-angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+@keyframes rotation {
+    from{ --gradient-angle: 0deg}
+    to { --gradient-angle: 360deg}
+}
+
+
+
+
+/*------------------------------
+Header
+------------------------------*/
+
+.header{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+}
+
+.header .container{
+    position: relative;
+
+}
+
+
+.header__text{ 
+
+}
+
+
+.header__text h1{
+    text-transform: unset;
+    font-weight: 400;
+    font-size: clamp(2rem, 5vw, 7rem);
+}
+
+.header__text h1 span{ 
+    font-weight: 900; 
+    display: block; 
+    font-size: clamp(2.5rem, 10vw, 10rem);
+    margin-top: 1rem;
+}
+
+
+.header__text p{width: 50%;}
+
+.header__media{
+    position: absolute;
+    bottom: 0;
+    right: -5%;
+    display: flex;
+    width: 50%;
+}
+
+.header__media__item:nth-child(1){
+
+}
+
+.header__media__item:nth-child(2){
+    transform: scale(0.7) translate(-30%, 30%);
+}
+
+
+@media (max-width: 768px){
+
+    .header__text p{width: 100%;}
+
+    .header__media{
+        position: unset;
+        width: 100%;
+        margin-top: 5vh;
+    }
+}
+
+
+/*------------------------------
+Hero
+------------------------------*/
+
+.hero{text-align: center; padding: 10vh 0;}
+
+.hero__text h2 {margin-left: auto; margin-right: auto;;}
+
+
+
+/*------------------------------
+Cards
+------------------------------*/
+
+.cards{
+    display: flex;
+    margin: 10vh auto;
+    gap: 4rem 2rem;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    
+
+}
+
+.card{
+    border: 2px solid #999;
+    border-radius: 0.5rem;
+    width: 30%;
+    padding: 2rem;
+    min-width: 200px
+    /*flex: 1;*/
+
+}
+
+.card h3{
+
+    margin: 0 auto;
+    text-align: center;
+}
+
+@media (max-width: 768px){
+
+}
+
+
+
+/*------------------------------
+Footer
+------------------------------*/
+.footer{ 
+    margin: 20vh auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap-reverse;
+    align-items: flex-end;
+    row-gap: 10vh;
+}
+
+.footer h2{
+    margin-block-end: 1rem;
+}
+
+.footer p{
+    font-size: clamp(1rem, 1.3vw, 2rem);
+    line-height: 2;
+}
+
+.footer__info{
+
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    row-gap: 5vh;
+}
+
+.footer__info__item{
+
+}
+
+.footer__info__item a{
+    transition: 0.4s;
+    display: inline-block;
+}
+
+.footer__info__item a:hover{
+    transform: scale(1.05);
+    color: var(--color-5);
+}
+
+.footer__info__item:first-child{
+    width: 100%;
+}
+
+.footer__form{
+    width: 35%;
+}
+
+.footer__form input:not([type=submit]),
+.footer__form textarea {
+    display: block;
+    width: 100%;
+    padding: 1rem 0;
+    margin: 1.5rem 0;
+    background: transparent;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    outline: none;
+    border: none;
+    border-bottom: 3px solid;
+    border-image-slice: 1;
+    border-image-source: conic-gradient( from var(--gradient-angle), 
+    var(--color-2),
+     var(--color-3),
+      var(--color-4),
+       var(--color-5),
+        var(--color-4),
+         var(--color-3),
+          var(--color-2));
+    animation: rotation 5s linear infinite;
+    font-size: 1.2rem;
+}
+
+.footer__form input:not([type=submit])::placeholder,
+.footer__form textarea::placeholder{
+    color: white;
+}
+
+.footer__form .button{
+    padding: unset;
+}
+.footer__form input[type=submit]{ 
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    display: block;
+    padding: 1rem 1.5rem;
+    font-family: inherit;
+    font-size: inherit;
+    font-style: inherit;
+    background: transparent;
+    color: white;
+    border-radius: 10px;
+    border: none;
+}
+
+.d-none{
+    display: none !important;
+}
+
+/*
+.footer__form input[type=submit]{ 
+    all: unset;
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    position: relative;
+    margin-top: 1rem;
+    border: 3px solid;
+    border-image-slice: 1;
+    border-image-source: conic-gradient( from var(--gradient-angle), 
+    var(--color-2),
+     var(--color-3),
+      var(--color-4),
+       var(--color-5),
+        var(--color-4),
+         var(--color-3),
+          var(--color-2));
+    animation: rotation 5s linear infinite;
+    cursor: pointer;
+}
+
+.footer__form input[type=submit]:hover{
+    border-image-slice: 1 fill;
+}
+
+*/
+
+
+@media (max-width: 768px){
+
+    .footer__info,
+    .footer__form {
+        width: 100%;
+    }
+
+    .footer__info__item{
+        width: 100%;
+    }
+}
+
+
+/*------------------------------
+Popup
+------------------------------*/
+.popup{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+    text-align: center;
+}
+
+.popup--visible{
+    display: flex;
+}
+
+
+
+.arc:before {
+    -webkit-animation: spin 0.5s infinite linear;
+            animation: spin 0.5s infinite linear;
+    border-radius: 100%;
+    border-top: 6px solid var(--color-5);
+    content: '';
+    display: block;
+    height: 50px;
+    width: 50px;
+    margin: 2rem auto;
+}
+  
+  @-webkit-keyframes spin {
+    to {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg); } }
+  
+  @keyframes spin {
+    to {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg); } }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
