@@ -45,6 +45,7 @@ Helpers
 .text--1{font-size: clamp(2.5rem, 4vw, 6rem);}
 .text--2{font-size: clamp(1.3rem, 2vw, 4rem);}
 
+
 /*------------------------------
 Button
 ------------------------------*/
@@ -102,6 +103,179 @@ Button
     to { --gradient-angle: 360deg}
 }
 
+
+
+/*------------------------------
+Navbar
+------------------------------*/
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    background: var(--color-1);
+    position: fixed;
+    top: 5%;
+    left: 7%;
+    z-index: 999;
+    box-shadow:0px 3px 30px rgb(0, 0, 0);
+    transition: 0.4s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.navbar--visible{
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.navbar--open::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    backdrop-filter: blur(50px);
+}
+
+.navbar__logo{
+    width: 20%;
+}
+
+.navbar__menu{
+    position: absolute;
+    top: calc(100% + 2rem);
+    left: 0;
+    width: 100%;
+    border-radius: 10px;
+    z-index: 999;
+    color: var(--color-1);
+    overflow: hidden;
+    transition: 0.4s;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.navbar__menu--open{
+    visibility: visible;
+    opacity: 1;
+}
+
+.navbar--open::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    backdrop-filter: blur(50px);
+}
+
+
+.navbar__menu ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 0 2rem;
+}
+
+.navbar__menu ul li{
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--color-1);
+    color: white;
+    border-radius: 10px;
+    transition: transform 0.4s ease-out;
+    transform: translateX(130%);
+}
+
+.navbar__menu ul li:nth-child(1){
+    transition-delay: 0.2s;
+}
+.navbar__menu ul li:nth-child(2){
+    transition-delay: 0.3s;
+}
+.navbar__menu ul li:nth-child(3){
+    transition-delay: 0.4s;
+}
+
+.navbar__menu--open ul li{
+    transform: translateX(0%);
+}
+
+.navbar__menu ul li:hover{
+    background: rgb(255, 255, 255);
+    color: var(--color-1);
+    transition: 0.4s;
+}
+
+.navbar__menu ul li a{
+    width: 100%;
+    display: block;
+    height: 100%;
+    padding: 2rem;
+    font-size: clamp(1.3rem, 2vw, 4rem);
+    font-weight: 400;
+}
+
+.navbar__toggle{
+    position: relative;
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+}
+
+.navbar__toggle__item{
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: white;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    transition: 0.4s;
+    border-radius: 10px;
+}
+
+
+.navbar__toggle__item:nth-child(1){
+    top: 40%;
+}
+
+.navbar__toggle__item:nth-child(2){
+    top: 60%;
+    width: 70%;
+}
+
+
+.navbar__toggle--open .navbar__toggle__item:nth-child(1){
+    top: 50%;
+    left: 15%;
+    transform: translateY(-50%) rotate(-45deg);
+    width: 70%;
+
+}
+
+.navbar__toggle--open .navbar__toggle__item:nth-child(2){
+    top: 50%;
+    left: 15%;
+    transform: translateY(-50%) rotate(45deg);
+}
+
+@media (max-width: 768px){
+    .navbar__logo{width: 60%;}
+    .navbar__toggle{
+        width: 50px;
+        height: 50px;
+    }
+}
 
 
 
