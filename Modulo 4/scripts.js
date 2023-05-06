@@ -35,9 +35,10 @@ const navbarVisible = () => {
 window.onscroll = () => navbarVisible()
 
 
-form.addEventListener('submit', event => {
+form.addEventListener('submit', event =>  {
 
     event.preventDefault()
+    popup_text.innerHTML = "Stiamo inviando il tuo messaggio. Attendi..."
     loader.classList.remove('d-none')
 
     togglePopup()
@@ -45,16 +46,14 @@ form.addEventListener('submit', event => {
     if( honeypot.value === '' ){
 
         emailjs.init("WdWbCWEwENLI_KOyG");
-
-        emailjs.sendForm('service_cl4zhwy', 'template_qwnxuhb', event.target)
-            .then( response =>  {
+    
+        emailjs.sendForm('service_6tcm88e', 'template_qwnxuhb', event.target)
+            .then( response => {
                 loader.classList.add('d-none')
                 popup_text.innerHTML = "Messaggio inviato con successo!"
-                event.target.reset
-
             }, error => {
-                popup_text.innerHTML = "Invio non riuscito. Riprova più tardi"
+                loader.classList.add('d-none')
+                popup_text.innerHTML = "Invio non riuscito, Riprova più tardi!"
             });
     }
-
 })
